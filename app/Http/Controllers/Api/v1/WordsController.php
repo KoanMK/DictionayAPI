@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api\v1;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Http\Resources\WordResource;
-use App\Http\Resources\WordResourceCollection;
+use App\Http\Resources\v1\WordResource;
+use App\Http\Resources\v1\WordResourceCollection;
 use App\Word;
 
 class WordsController extends Controller

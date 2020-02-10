@@ -18,4 +18,15 @@ use App\Word;
 //     return $request->user();
 // });
 
-Route::apiResource('/word', 'WordsController');
+Route::prefix('v1')->group(function() {
+    Route::apiResource('/word', 'Api\v1\WordsController')
+        ->only(['show', 'destroy', 'update', 'store']);
+
+    Route::apiResource('/words', 'Api\v1\WordsController')
+        ->only(['index']);
+});
+
+Route::prefix('v2')->group(function() {
+    Route::apiResource('/word', 'Api\v2\WordsController')
+        ->only(['show']);
+});
